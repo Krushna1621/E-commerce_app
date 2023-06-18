@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from './Header.module.css'
-const Header = () => {
+import CartContext from '../../store/Cart-context'
+const Header = (props) => {
+  const cartCtx = useContext(CartContext)
+
   return (
     <header className={classes.header}>
       <h4>E-commerce</h4>
@@ -9,7 +12,14 @@ const Header = () => {
         <li>STORE</li>
         <li>ABOUT</li>
       </ul>
-      <button className={classes.btn}>cart</button>
+      <button
+        className={classes.btn}
+        onClick={() => {
+          props.onClick()
+        }}
+      >
+        cart ({cartCtx.items.length})
+      </button>
     </header>
   )
 }
