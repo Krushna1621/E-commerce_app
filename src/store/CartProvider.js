@@ -2,51 +2,61 @@ import React, { useState } from 'react';
 import CartContext from './Cart-context';
 
 const CartProvider = (props) => {
-  const [items, setItems] = useState([]);
+  const [items, setItem] = useState([])
 
   const addItemToCartHandler = (item) => {
     if (items.length === 0) {
-      setItems([item]);
+      setItem([item])
+      // console.log(items)
     } else {
-      const isItemPresent = items.find((each) => each.title === item.title);
+      let valPresent = items.find((each) => each.title === item.title)
 
-      if (isItemPresent) {
-        alert('This item is already added to the cart');
+      if (valPresent) {
+        alert('This item is already added to the cart')
       } else {
-        setItems([...items, item]);
+        setItem([...items, item])
+        // console.log(items)
       }
     }
-  };
+  }
 
   const removeItemFromCartHandler = (id) => {
-    console.log(id);
-    const afterRemovedList = items.filter((each) => each.id !== id);
-    console.log(afterRemovedList);
-    setItems(afterRemovedList);
-  };
+    console.log(id)
+    let afterRemovedList = items.filter((each) => {
+      if (each.id !== id) {
+        console.log('aaaaa')
+        return each
+      }
+    })
+    console.log(afterRemovedList)
+    //console.log(a)
+    setItem([...afterRemovedList])
+  }
 
   const updateItemHandler = (id, quantity) => {
-    const updatedArr = items.map((each) => {
+    
+    let updatedArr = items.map((each) => {
       if (each.id === id) {
-        return { ...each, quantity: quantity };
+        each.quantity = quantity
+        return each
       }
-      return each;
-    });
-    setItems(updatedArr);
-  };
+      return each
+    })
+    setItem([...updatedArr])
+  }
 
   const cartContext = {
     items: items,
-    addItem: addItemToCartHandler,
+    addItem: addItemToCartHandler, //add item list to cart
     removeItem: removeItemFromCartHandler,
     updateItem: updateItemHandler,
-  };
+  }
 
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
     </CartContext.Provider>
-  );
-};
+  )
+}
 
-export default CartProvider;
+export default CartProvider
