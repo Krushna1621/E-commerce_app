@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import classes from './CartItem.module.css'
-import CartContext from '../../store/Cart-context'
+import CartContext from '../../store/cart-context'
 
 const CartItem = (props) => {
   const cartCtx = useContext(CartContext)

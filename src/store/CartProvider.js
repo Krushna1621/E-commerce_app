@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import CartContext from './Cart-context';
+import React, { useState } from 'react'
+import CartContext from './cart-context'
+
 
 const CartProvider = (props) => {
   const [items, setItem] = useState([])
@@ -34,7 +35,9 @@ const CartProvider = (props) => {
   }
 
   const updateItemHandler = (id, quantity) => {
-    
+    // console.log(id)
+    // console.log('update')
+    // console.log(quantity)
     let updatedArr = items.map((each) => {
       if (each.id === id) {
         each.quantity = quantity

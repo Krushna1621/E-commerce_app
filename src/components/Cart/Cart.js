@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import CartItem from './CartItem'
 import classes from './Cart.module.css'
 import { FaRegWindowClose } from 'react-icons/fa'
-import CartContext from '../../store/Cart-context'
+import CartContext from '../../store/cart-context'
 
 const Cart = (props) => {
   // const [cartItems, setCartItems] = useState([...cartElements])
@@ -27,7 +27,9 @@ const Cart = (props) => {
         return <CartItem key={item.id} item={item} />
       })}
       <h4>Total : {total}</h4>
-      <button className={classes.btn}>PURCHASE</button>
+      <button className={classes.btn} onClick={()=>{
+        alert('Item is puchased')
+      }}>PURCHASE</button>
     </div>
   )
 }
