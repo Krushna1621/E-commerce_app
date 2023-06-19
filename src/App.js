@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 import CartProvider from './store/CartProvider'
@@ -8,6 +7,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import ContactUs from './pages/ContactUs'
 import EachProduct from './pages/EachProduct'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   return (
@@ -19,10 +19,10 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/products/:productId' element={<EachProduct />} />
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
       <Footer />
     </CartProvider>
   );
 }
-
-export default App;
+export default App
