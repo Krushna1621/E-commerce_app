@@ -21,10 +21,10 @@ const LoginPage = () => {
     let url
     if (isLogin) {
       url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAVz545erTZB78i1xj1UEkV64Wt0UBKjRA'
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCALqnU_qy4vywXT-ue-TSqipH97w_wUTk'
     } else {
       url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAVz545erTZB78i1xj1UEkV64Wt0UBKjRA'
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCALqnU_qy4vywXT-ue-TSqipH97w_wUTk'
     }
 
     try {

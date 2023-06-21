@@ -16,7 +16,7 @@ const Contact = () => {
     // console.log(queryData)
 
     const response = await fetch(
-      'https://ecommerce-contact-8895c-default-rtdb.firebaseio.com/contact.json',
+      'https://react-e-commerce-http-default-rtdb.firebaseio.com/contact.json',
       {
         method: 'POST',
         body: JSON.stringify(queryData),

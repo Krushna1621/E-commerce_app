@@ -46,7 +46,7 @@ const CartProvider = (props) => {
   const authCtx = useContext(AuthContext)
   const [items, setItem] = useState([])
   const [productsArr, setProductsArr] = useState(ProductsArr)
-  const url = `https://crudcrud.com/api/057cf797099540f78f08bb8b5d515282/${authCtx.email}`
+  const url = `https://crudcrud.com/api/f27b0b9924184bb4a3ff06893ab75768/${authCtx.email}`
 
   useEffect(() => {
     async function fetchData() {

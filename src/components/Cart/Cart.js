@@ -26,7 +26,9 @@ const Cart = (props) => {
         return <CartItem key={item._id} item={item} />
       })}
       <h4>Total : {total}</h4>
-      <button className={classes.btn}>PURCHASE</button>
+      <button className={classes.btn} onClick={()=>{
+        alert("The product is purched succesfully !")
+      }}>PURCHASE</button>
     </div>
   )
 }
